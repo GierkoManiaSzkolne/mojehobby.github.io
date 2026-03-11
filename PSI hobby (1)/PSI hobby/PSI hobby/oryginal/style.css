@@ -1,0 +1,450 @@
+/*kontener*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f4f4f4;
+    font-family: 'Varela Round', sans-serif;
+}
+.kontener{
+    display: grid;
+    grid-template-areas: "header header" "sidebar content" "footer footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+/*header*/
+.main-header{ 
+    grid-area: header; 
+    background-color: #000; 
+    padding: 20px 0; 
+    text-align: center; 
+    position: relative; 
+}
+.logo img{
+    max-width: 300px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*nawigacja*/
+.nav{
+    background-color: #888; 
+    margin: 20px auto 0; 
+    width: 90%; 
+    padding: 15px 0; 
+    border: 1px solid #fff; 
+}
+.nav-links{ 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    gap: 40px; 
+}
+.nav-links a{ 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+.nav-przycisk{ 
+    background-color: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+/*tresc strony*/
+.content{ 
+    grid-area: content; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+.napisglowna{ 
+    background-color: #bcbcbc; 
+    padding: 40px; 
+    text-align: center; 
+    border: 1px solid #fff; }
+.main-grid{ 
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px; 
+}
+.conowego, filmik{ 
+    background-color: #a3a3a3; 
+    height: 580px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    border: 1px solid #fff; 
+}
+.conowego h3{
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+.conowego-content{
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #000;
+}
+.filmik{
+    display: block; 
+    overflow: hidden;
+}
+.filmik video{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/*footer strony*/
+.footer{ 
+    grid-area: footer; 
+    background-color: #000; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px; 
+}
+
+/*tresc strony grystategiczne*/
+.gry-header{ 
+    background-color: #bcbcbc; 
+    padding: 30px; 
+    text-align: center;
+}
+
+.gry-grid{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+.gra-content{ 
+    background-color: #a3a3a3; 
+    border: 1px solid #fff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 550px; 
+}
+
+.gra-img{ 
+    height: 300px; 
+    background-color: #888; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-bottom: 1px solid #fff; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.gra-desc{ 
+    padding: 25px 20px; 
+    text-align: center; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.gra-desc h3{ 
+    font-size: 1.4rem; 
+    margin-bottom: 15px; 
+}
+
+.gra-desc p{ 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+}
+
+.gra-dowiedz{ 
+    background-color: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+.gra-dowiedz a{
+    text-decoration: none;
+    color: white;
+}
+.gra-item{
+    background-color: #a3a3a3; 
+    border: 1px solid #fff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 550px; 
+}
+.gra-placeholder-img{
+    height: 300px; 
+    background-color: #888; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-bottom: 1px solid #fff; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+/*tresc strony tworcy*/
+.tworcy-header{ 
+    background-color: #bcbcbc; 
+    padding: 30px; 
+    text-align: center; 
+}
+
+.tworcy-bloki{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+.tworca-ramka{ 
+    background-color: #a3a3a3; 
+    border: 1px solid #fff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 550px; 
+}
+ 
+.tworca-img{ 
+    height: 300px; 
+    background-color: #888; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-bottom: 1px solid #fff; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+.tworca-desc{ 
+    padding: 25px 20px; 
+    text-align: center; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.tworca-desc h3{ 
+    font-size: 1.4rem; 
+    margin-bottom: 15px; 
+}
+
+.sociale{ 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; 
+}
+.sociale a{
+    text-decoration: none;
+    color: white;
+}
+
+.tworca-social{ 
+    background-color: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+/*tresc poczatkujacy etc.*/
+.poczatkujacy-grid,
+.sredniozaawansowany-grid,
+.zaawansowany-grid,
+.expert-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.kwadraty {
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+}
+
+.kwadraty-icon {
+    background-color: #333;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.kwadraty-info h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.kwadraty-przycisk {
+    font-size: 0.7rem;
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/*tresc o stronie*/
+.duzy-tekst {
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    padding: 40px;
+    min-height: 500px;
+}
+/*tresc odnogi gry*/
+.duzy-tekst-gry{
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    padding: 0; 
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ramka{
+    width: 100%;
+    height: 300px;
+    background-color: #888;
+    border-bottom: 2px solid #fff;
+}
+
+.ramka img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.duzy-tekst-gry-padding{
+    padding: 40px;
+}
+
+.duzy-tekst-gry-padding h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.text-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+/*tresc strona wybor*/
+.wybor-siatka-kafelkow {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.wybor-kafelek {
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    padding: 40px;
+    height: 250px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.wybor-kafelek:hover {
+    background-color: #909090;
+}
+
+.wybor-kafelek-link {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.wybor-kafelek-link:hover {
+    text-decoration: underline;
+}
+
+.wybor-kafelek-opis {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+    max-width: 80%;
+}
+
+.parent-item::before { 
+    content: "•"; 
+    position: absolute; 
+    left: 0; 
+    color: #000; 
+}
+/*nawigacja po lewej stronie*/
+.sidebar{ 
+    grid-area: sidebar; 
+    background-color: #a3a3a3; 
+    padding: 30px 20px; 
+    border-right: 1px solid #333; 
+}
+.sidebarnapis{ 
+    text-align: center; 
+    margin-bottom: 40px; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+}
+.sidetresc{ 
+    list-style: 
+    none; }
+.parent-item { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    position: relative; 
+    padding-left: 25px; 
+    margin-bottom: 10px; 
+}
+.parent-item a.main-link, .parent-item .main-link { 
+    text-decoration: none; 
+    color: #000; 
+}
+.sub-menu { 
+    list-style: none; 
+    margin-left: 20px; 
+    margin-top: 10px; }
+.sub-menu li { 
+    font-size: 1.2rem; 
+    margin-bottom: 8px; 
+    display: flex; 
+    align-items: center; }
+.sub-menu li::before { 
+    content: "↳"; 
+    margin-right: 10px; }
+.sub-menu a { 
+    text-decoration: none; 
+    color: #000; }
+.sidetresc {
+    text-align: left;
+}

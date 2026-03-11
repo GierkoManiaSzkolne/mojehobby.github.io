@@ -1,0 +1,299 @@
+/* =========================================
+   1. FUNDAMENTY I STRUKTURA (GRID)
+   ========================================= */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4; 
+    color: #000; 
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header" "sidebar content" "footer footer";
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. NAGŁÓWEK I NAWIGACJA GÓRNA
+   ========================================= */
+.main-header { 
+    grid-area: header; 
+    background-color: #000; 
+    padding: 20px 0; 
+    text-align: center; 
+    position: relative; 
+}
+
+.logo-area h1 a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 3rem; 
+    font-weight: bold; 
+}
+
+.top-nav { 
+    background-color: #888; 
+    margin: 20px auto 0; 
+    width: 90%; 
+    padding: 15px 0; 
+    border: 1px solid #fff; 
+}
+
+.nav-links { 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    gap: 40px; 
+}
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+
+#menu-toggle, 
+.menu-button, 
+.nav-toggle, 
+.nav-toggle-label, 
+.nav-menu-wrapper { 
+    display: none; 
+}
+
+/* =========================================
+   3. LEWA STRONA (SIDEBAR)
+   ========================================= */
+.sidebar { 
+    grid-area: sidebar; 
+    background-color: #a3a3a3; 
+    padding: 30px 20px; 
+    border-right: 1px solid #333; 
+}
+
+.sidebar-info { 
+    text-align: center; 
+    margin-bottom: 40px; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+}
+
+.side-menu { 
+    list-style: none; 
+}
+
+.parent-item { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    position: relative; 
+    padding-left: 25px; 
+    margin-bottom: 10px; 
+}
+
+.parent-item::before { 
+    content: "•"; 
+    position: absolute; 
+    left: 0; 
+    color: #000; 
+}
+
+.parent-item .main-link { 
+    text-decoration: none; 
+    color: #000; 
+}
+
+.sub-menu { 
+    list-style: none; 
+    margin-left: 20px; 
+    margin-top: 10px; 
+}
+
+.sub-menu li { 
+    font-size: 1.2rem; 
+    margin-bottom: 8px; 
+    display: flex; 
+    align-items: center; 
+}
+
+.sub-menu li::before { 
+    content: "↳"; 
+    margin-right: 10px; 
+}
+
+.sub-menu a { 
+    text-decoration: none; 
+    color: #000; 
+}
+
+
+/* =========================================
+   4. PRAWA STRONA (CONTENT)
+   ========================================= */
+.content { 
+    grid-area: content; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.hero-banner, 
+.gry-header, 
+.tworcy-header, 
+.tutoriale-header { 
+    background-color: #bcbcbc; 
+    padding: 30px; 
+    text-align: center; 
+    border: 1px solid #fff; 
+}
+
+/* UKŁAD WYDŁUŻONYCH BOKSÓW (GRY I TWÓRCY) */
+.gry-grid, 
+.tworcy-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+.gra-item, 
+.tworca-item { 
+    background-color: #a3a3a3; 
+    border: 1px solid #fff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 550px; 
+}
+
+.gra-placeholder-img, 
+.tworca-img-area { 
+    height: 300px; 
+    background-color: #888; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-bottom: 1px solid #fff; 
+}
+
+.gra-desc, 
+.tworca-desc { 
+    padding: 25px 20px; 
+    text-align: center; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+/* UKŁAD TUTORIALI (MAŁE PROSTOKĄTY) */
+.tutoriale-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.tut-small-box {
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+}
+
+.tut-icon {
+    background-color: #333;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* WIELKI BOKS TEKSTOWY (O STRONIE) */
+.text-huge-box {
+    background-color: #a3a3a3;
+    border: 1px solid #fff;
+    padding: 40px;
+    min-height: 500px;
+}
+
+/* =========================================
+   5. PRZYCISKI I STOPKA
+   ========================================= */
+.btn-gra, 
+.btn-tworca, 
+.btn-tut { 
+    background-color: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.main-footer { 
+    grid-area: footer; 
+    background-color: #000; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px; 
+}
+
+/* =========================================
+   6. RESPONSYWNOŚĆ (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+    .container { 
+        grid-template-columns: 1fr; 
+        grid-template-areas: "header" "content" "footer"; 
+    }
+
+    .sidebar { 
+        display: none; 
+    }
+
+    .gry-grid, 
+    .tworcy-grid, 
+    .tutoriale-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .gra-item, 
+    .tworca-item { 
+        min-height: 600px; 
+    }
+
+    .gra-placeholder-img, 
+    .tworca-img-area { 
+        height: 350px; 
+    }
+
+    .menu-button { 
+        display: block; 
+        color: #fff; 
+        cursor: pointer; 
+        text-align: center; 
+    }
+
+    .nav-toggle-label { 
+        display: block; 
+        position: absolute; 
+        top: 30px; 
+        right: 20px; 
+        z-index: 1002; 
+    }
+}
